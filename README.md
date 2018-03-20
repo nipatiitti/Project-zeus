@@ -1,4 +1,4 @@
-# Arkea Bot - 1.4 - ES6 - WIP
+# Discord permission control software - ES6 - WIP
 
 ## Getting Started
 
