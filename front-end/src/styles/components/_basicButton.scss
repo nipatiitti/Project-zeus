@@ -1,0 +1,11 @@
+.basicButton {
+  background-color: white;
+  border: 1px solid $grey;
+
+  cursor: pointer;
+}
+
+.basicButton:focus {
+  outline: 0;
+  box-shadow: -1px -1px;
+}

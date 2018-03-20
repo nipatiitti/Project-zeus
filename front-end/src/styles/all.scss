@@ -1,0 +1,31 @@
+@import 'variables';
+
+@import 'components/all';
+
+html {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  margin-top: 0;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  display: flex;
+  flex-basis: auto;
+  flex-grow: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+#root {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.mainView {
+  width: 100%;
+}

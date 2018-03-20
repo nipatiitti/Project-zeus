@@ -8,9 +8,7 @@
 
 # production
 /build
-
-# Variables. Never commit to cloude
-/src/info.json
+src/**/*.css
 
 # misc
 .DS_Store
@@ -22,3 +20,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#
+/.idea
