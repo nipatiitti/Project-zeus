@@ -16,12 +16,8 @@ class LoggedIn extends Component {
 
   componentDidMount() {
     const parsed = queryString.parse(this.props.location.search)
-    if (this.props.token !== '') {
-      console.log(this.props);
-    } else {
-      if(parsed.code)
+    if(this.props.token === '' && parsed.code)
         this.props.getToken(parsed.code)
-    }
   }
 
   render() {

@@ -4,8 +4,9 @@
   "description": "Discord Arkea bot | Discord.js libraries (discord.js.org)",
   "main": "Program.js",
   "scripts": {
-    "build": "rimraf build/ && babel ./src/ --out-dir build/ --copy-files",
-    "start": "npm run build && node build/index.js"
+    "build": "rimraf dist/ && babel-node ./server/ --out-dir dist/ --copy-files",
+    "start": "npm run build && node dist/index.js",
+    "hot-start": "nodemon --exec npm run build"
   },
   "repository": {
     "type": "git",
@@ -25,19 +26,15 @@
   },
   "homepage": "https://github.com/Dingodhole/arkea-bot#readme",
   "dependencies": {
-    "discord.js": "^11.2.1",
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "body-parser": "^1.18.2",
+    "discord.js": "^11.2.1",
     "express": "^4.16.3",
     "mongoose": "^5.0.9",
     "morgan": "^1.9.0",
+    "node-schedule": "^1.3.0",
     "rimraf": "^2.6.2"
-  },
-  "scripts": {
-    "build": "rimraf dist/ && babel-node ./server/ --out-dir dist/ --copy-files",
-    "start": "npm run build && node dist/index.js",
-    "hot-start": "nodemon --exec npm run build"
   },
   "devDependencies": {
     "nodemon": "^1.17.2"
