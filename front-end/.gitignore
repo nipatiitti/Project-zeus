@@ -17,6 +17,9 @@ src/**/*.css
 .env.test.local
 .env.production.local
 
+# Tokens
+src/info.json
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

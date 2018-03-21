@@ -12,4 +12,4 @@ export const error = (text) => {
   }
 }
 
-export const baseUrl = ""
+export const baseUrl = "https://discordapp.com/api"

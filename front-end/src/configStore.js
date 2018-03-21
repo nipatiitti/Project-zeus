@@ -10,7 +10,7 @@ import main from './reducers/main'
 const persistConfig = {
   key: 'projectapi_root',
   storage,
-  blacklist: []
+  blacklist: ['info']
 }
 
 const persistedReducer = persistReducer(persistConfig, main)

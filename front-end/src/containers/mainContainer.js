@@ -1,21 +1,20 @@
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 
-import { getPosts } from '../actions/getPosts'
+import { login } from '../actions/mainActions'
 
 import Main from '../components/Main'
 
 const mapStateToProps = state => {
   return {
-    data: state.data.data,
-    loading: state.loading.loading
+    info: state.info
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    getPosts: ( type ) => (
-      dispatch(getPosts(type))
+    login: () => (
+      dispatch(login())
     )
   }
 }
