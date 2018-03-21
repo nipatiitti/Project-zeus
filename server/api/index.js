@@ -1,11 +1,9 @@
 import express from 'express'
 
-import handleDelete from './delete'
-import handleAdd from './add'
+import handleReq from './post'
 
 const router = express.Router({mergeParams: true})
 
-router.post('/delete', (req, res) => handleDelete(req, res))
-router.post('/add', (req, res) => handleAdd(req, res))
+router.post('/', (req, res) => handleReq(req, res))
 
 export default router
