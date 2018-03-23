@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import queryString from 'query-string'
 
 import Button from '../Button'
 import Text from '../Text'
@@ -24,9 +23,10 @@ class LoggedIn extends Component {
   }
 
   componentDidMount() {
-    const parsed = queryString.parse(this.props.location.search)
+    const parsed = this.props.location.search.split('=')[1]
+    console.log(parsed);
     if(!this.state.tokenSaved) {
-        this.props.getToken(parsed.code)
+        this.props.getToken(parsed)
         this.setState({
           tokenSaved: true
         })
