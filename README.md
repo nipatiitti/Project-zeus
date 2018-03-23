@@ -8,17 +8,23 @@
 ```
 npm install
 ```
+and `cd front-end`
+```
+npm install
+```
 
 3. Run to start server:
 
-```
-npm start
-```
-
-To build but not start use:
+in `/front-end`
 
 ```
 npm run build
+```
+
+and in `/`
+
+```
+npm hot-start
 ```
 
 
@@ -27,8 +33,8 @@ Just send pull request
 
 ## Authors
 
-* **Niilo Jaakkola** - *CEO, cleaning and code review*
-* **Lukas ??** - *Hosting and other ground work*
+* **Niilo Jaakkola** - *Everything*
+* **Lukas Luotola** - *Hosting*
 
 ## License
 
