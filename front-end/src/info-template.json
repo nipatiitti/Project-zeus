@@ -1,0 +1,8 @@
+{
+  "id": "",
+  "secret": "",
+  "url": "http://localhost:3000/login",
+  "guildID": "",
+  "botToken": "",
+  "removeRole": ""
+}

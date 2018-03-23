@@ -3,16 +3,16 @@ import config from '../discord/config.json'
 
 async function handleReq(req, res) {
   try {
-    const { channel, userId, bool } = req.body
+    const { channelId, userId, bool } = req.body
 
     const guild = bot.guilds.get(config.guildID)
 
-    const channel = guild.channels.get(channel)
+    const channel = guild.channels.get(channelId)
 
     channel.overwritePermissions(userId, {
       READ_MESSAGES: bool
     })
-    .then(updated => res.send(updated.permissionOverwrites.get(userId)))
+    .then(() => res.send({succes: true}))
 
   } catch(msg) {
     console.log(msg)
@@ -20,4 +20,4 @@ async function handleReq(req, res) {
   }
 }
 
-export default handleDelete
+export default handleReq

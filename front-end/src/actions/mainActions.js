@@ -5,6 +5,6 @@ export const login = () => {
     const { info } = getState()
 
 
-    window.location = `${baseUrl}/oauth2/authorize?response_type=code&client_id=${info.id}&scope=identify&redirect_uri=${encodeURI(info.url)}`
+    window.location = `${baseUrl}/oauth2/authorize?response_type=code&client_id=${info.id}&scope=identify%20guilds&redirect_uri=${encodeURI(info.url)}`
   }
 }

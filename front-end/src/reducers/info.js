@@ -1,10 +1,13 @@
-import {id, secret, url} from '../info.json'
+import {id, secret, url, guildID, botToken, removeRole} from '../info.json'
 
 const initialState = {
   id,
   secret,
   url,
-  token: ''
+  token: '',
+  guildID,
+  botToken,
+  removeRole
 }
 
 const info = (state = initialState, action) => {
