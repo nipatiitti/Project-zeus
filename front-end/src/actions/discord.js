@@ -15,7 +15,7 @@ export const getToken = () => (dispatch, getState) => {
                     INFO.secret
                 }&grant_type=authorization_code&code=${code}&redirect_uri=${encodeURI(
                     INFO.url
-                )}&scope=identify%20guilds`
+                )}`
             }
         }
     })
