@@ -14,7 +14,7 @@ const app = express()
 const DOMAIN = process.env.DOMAIN
 const SUBDOMAIN = process.env.SUBDOMAIN
 const FQDN = SUBDOMAIN ? `${SUBDOMAIN}.${DOMAIN}` : DOMAIN
-const CERT_DIR = process.env.CERT_DIR
+const CERT_DIR = process.env.CERT_DIR | "/etc/letsencrypt/live"
 
 // Certificate
 const privateKey = fs.readFileSync(
