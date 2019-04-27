@@ -9,15 +9,22 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import AuthChecker from './AuthChecker'
+import { Loading } from '../Utils'
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
     return (
         <AuthChecker>
-            {({ isAuthenticated }) => (
+            {({ isAuthenticated, rendering }) => (
                 <Route
                     {...rest}
                     render={props =>
-                        isAuthenticated ? <Component {...props} /> : <Redirect to="/login" />
+                        rendering ? (
+                            <Loading />
+                        ) : isAuthenticated ? (
+                            <Component {...props} />
+                        ) : (
+                            <Redirect to="/login" />
+                        )
                     }
                 />
             )}
