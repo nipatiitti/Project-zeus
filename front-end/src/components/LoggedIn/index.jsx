@@ -24,7 +24,7 @@ class LoggedIn extends Component {
 
   componentDidMount() {
     const parsed = this.props.location.search.split('=')[1]
-    console.log(parsed);
+    
     if(!this.state.tokenSaved) {
         this.props.getToken(parsed)
         this.setState({
@@ -55,7 +55,7 @@ class LoggedIn extends Component {
     })
 
     let newChannels = []
-
+    console.log(channels)
     channels.forEach(channel => {
       const { permission_overwrites } = channel
 

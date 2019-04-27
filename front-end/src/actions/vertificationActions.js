@@ -34,9 +34,9 @@ export const getToken = ( code ) => {
       dispatch(loading(false))
     })
     .catch(e => {
-      console.log(e)
       dispatch(loading(false))
       dispatch(error(e.response))
+      history.push('/')
     })
   }
 }

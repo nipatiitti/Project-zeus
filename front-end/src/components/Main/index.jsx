@@ -1,18 +1,33 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from "react"
 
-import Button from '../Button'
-import Text from '../Text'
+import CircularProgress from "@material-ui/core/CircularProgress"
+import { withStyles } from "@material-ui/core/styles"
 
-const Main = ({ login }) => (
-  <div className='mainView'>
-    <Text text="Welcome" />
-    <Button text="Log in" onClick={login} />
-  </div>
-)
+const style = theme => ({
+    loading: {
+        color: "#fff"
+    }
+})
 
-Main.propTypes = {
-  login: PropTypes.func.isRequired
+class Main extends Component {
+    constructor(props) {
+        super(props)
+    }
+
+    componentDidMount = () => {
+        this.props.login()
+    }
+
+    render() {
+        return (
+            <div className='mainView'>
+                <CircularProgress
+                    className={this.props.classes.loading}
+                    size={70}
+                />
+            </div>
+        )
+    }
 }
 
-export default Main
+export default withStyles(style)(Main)
