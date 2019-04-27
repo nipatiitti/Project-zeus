@@ -11,8 +11,8 @@ import https from 'https'
 const app = express()
 
 // Domain variables
-const DOMAIN = "caniper.com"
-const SUBDOMAIN = "zeus"
+const DOMAIN = process.env.DOMAIN
+const SUBDOMAIN = process.env.SUBDOMAIN
 const FQDN = SUBDOMAIN ? `${SUBDOMAIN}.${DOMAIN}` : DOMAIN
 
 // Certificate
