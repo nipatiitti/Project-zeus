@@ -20,11 +20,7 @@ class App extends Component {
     render = () => {
         return (
             <Fragment>
-                <Helmet
-                    titleTemplate="%s | ICT ZEUS"
-                    title="Login"
-                    defaultTitle="Zeus"
-                />
+                <Helmet titleTemplate="%s | ICT ZEUS" title="Login" defaultTitle="Zeus" />
                 <Router>
                     <Switch>
                         <Route path="/token" exact component={Token} />
@@ -39,11 +35,6 @@ class App extends Component {
                         />
                     </Switch>
                 </Router>
-                {/*
-					Render error message right away
-					Will return null if there is no such error
-				*/}
-                <ErrorMessage />
             </Fragment>
         )
     }

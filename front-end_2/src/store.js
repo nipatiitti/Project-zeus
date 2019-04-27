@@ -18,7 +18,7 @@ import { PERSIST_KEY } from 'constants'
 // Create client alias
 // Used in action creators
 const client = axios.create({
-    baseURL: 'https://discordapp.com/api',
+    baseURL: 'https://discordapp.com/api/v6',
     responseType: 'json'
 })
 
@@ -26,17 +26,14 @@ const client = axios.create({
 const persistConfig = {
     key: PERSIST_KEY,
     storage,
-    blacklist: ['router', 'main']
+    blacklist: ['router']
 }
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 // Define middleware to use
-const tools = [
-    applyMiddleware(thunk, routerMiddleware(history), axiosMiddleware(client))
-]
+const tools = [applyMiddleware(thunk, routerMiddleware(history), axiosMiddleware(client))]
 
-if (window.__REDUX_DEVTOOLS_EXTENSION__)
-    tools.push(window.__REDUX_DEVTOOLS_EXTENSION__())
+if (window.__REDUX_DEVTOOLS_EXTENSION__) tools.push(window.__REDUX_DEVTOOLS_EXTENSION__())
 
 // Create redux store
 const store = createStore(persistedReducer, compose(...tools))

@@ -3,13 +3,11 @@
  * for easier import inside components
  */
 
-try {
-    import info from './info.json'
-} catch (e) {
-    console.error('No info file')
-}
+import info from './info.json'
 
 const INFO = info ? info : null
+
+if (!info) console.error('src/info.js missing')
 
 export default INFO
 

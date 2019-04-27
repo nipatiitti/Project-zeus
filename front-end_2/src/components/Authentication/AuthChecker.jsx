@@ -2,11 +2,12 @@
  * A Reusable wrapper component
  * Define authentication state and pass it to its children
  *
- *
  */
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+
+import moment from 'moment'
 
 import { getUser } from 'reducers'
 
@@ -19,13 +20,15 @@ class AuthCheck extends Component {
     }
 
     componentDidMount() {
-        if (!this.props.token) {
+        if (!this.props.main.token || moment().isAfter(moment(this.props.main.expires_in))) {
             this.setState({ isAuthenticated: false })
         }
     }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.token !== this.props.token) {
+        if (prevProps.main.token && !this.props.main.token) {
+            this.setState({ isAuthenticated: false })
+        } else if (prevProps.main.token !== this.props.main.token) {
             this.setState({ isAuthenticated: true })
         }
     }
@@ -37,7 +40,7 @@ class AuthCheck extends Component {
 }
 
 const mapStateToProps = state => ({
-    user: state.main.token
+    main: state.main
 })
 
 export default connect(mapStateToProps)(AuthCheck)

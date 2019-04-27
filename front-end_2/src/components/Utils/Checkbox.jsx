@@ -8,14 +8,11 @@
 
 import React, { Fragment } from 'react'
 
-import Check from 'assets/icons/check-icon.svg'
-
 const Checkbox = ({ checked, children, onChange = () => {} }) => (
     <div onClick={() => onChange(!checked)} className="checkbox-container">
         <div className={`checkbox checkbox-${checked}`}>
             {checked && <i className="material-icons">check</i>}
         </div>
-        <span>{children}</span>
     </div>
 )
 

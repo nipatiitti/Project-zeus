@@ -11,7 +11,7 @@ import { CODE_SUCCESS } from 'actions/types'
 
 import { Loading } from './Utils'
 
-class Login extends Component {
+class Token extends Component {
     constructor(props) {
         super(props)
     }
@@ -25,10 +25,7 @@ class Login extends Component {
 
         try {
             await this.props.dispatch(getToken())
-            await Promise.all([
-                this.props.dispatch(getUser()),
-                this.props.dispatch(getChannels())
-            ])
+            await Promise.all([this.props.dispatch(getUser()), this.props.dispatch(getChannels())])
             this.props.history.replace('/')
         } catch (e) {
             console.error(e)
@@ -40,4 +37,4 @@ class Login extends Component {
     }
 }
 
-export default connect()(Login)
+export default connect()(Token)

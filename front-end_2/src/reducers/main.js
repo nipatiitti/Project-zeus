@@ -4,6 +4,8 @@
  *
  */
 
+import moment from 'moment'
+
 import {
     CODE_SUCCESS,
     CHANNELS,
@@ -20,12 +22,13 @@ import {
 const initialState = {
     code: null,
     token: null,
+    expires_in: null,
     user: null,
     channels: null,
     loading: false
 }
 
-export const loginReducer = (state = initialState, action) => {
+export const main = (state = initialState, action) => {
     switch (action.type) {
         case CODE_SUCCESS:
             return {
@@ -62,8 +65,14 @@ export const loginReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                token: action.payload.data.access_token
+                token: action.payload.data.access_token,
+                expires_in: moment()
+                    .add(action.payload.data.expires_in, 's')
+                    .format()
             }
+
+        case 'LOGOUT':
+            return initialState
 
         default:
             return state

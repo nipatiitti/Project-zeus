@@ -11,7 +11,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = options => ({
     mode: options.mode,
-    entry: options.entry,
+    entry: {
+        polyfill: 'babel-polyfill',
+        app: options.entry
+    },
     output: Object.assign(
         {
             path: path.resolve(process.cwd(), 'build'),
@@ -40,9 +43,7 @@ module.exports = options => ({
                 test: /\.scss$/,
                 exclude: /node_modules/,
                 use: [
-                    options.mode === 'development'
-                        ? 'style-loader'
-                        : MiniCssExtractPlugin.loader,
+                    options.mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
                     'css-loader',
                     'sass-loader'
                 ]
