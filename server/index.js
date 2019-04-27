@@ -4,32 +4,28 @@ import path from "path"
 import morgan from "morgan"
 import bodyParser from "body-parser"
 import api from "./api"
-//import fs from 'fs'
-//import http from 'http'
-//import https from 'https'
-
-// Dependencies
-const fs = require("fs")
-const https = require("https")
-const http = require("http")
+import fs from 'fs'
+import http from 'http'
+import https from 'https'
 
 const app = express()
 
-// Domain variables
-const DOMAIN = "caniper.com"
-const SUBDOMAIN = "zeus"
+// Variables regarding certificate
+const DOMAIN = process.env.DOMAIN
+const SUBDOMAIN = process.env.SUBDOMAIN
 const FQDN = SUBDOMAIN ? `${SUBDOMAIN}.${DOMAIN}` : DOMAIN
+const CERT_DIR = process.env.CERT_DIR
 
 // Certificate
 const privateKey = fs.readFileSync(
-    `/etc/letsencrypt/live/${FQDN}/privkey.pem`,
+    `${CERT_DIR}/${FQDN}/privkey.pem`,
     "utf8"
 )
 const certificate = fs.readFileSync(
-    `/etc/letsencrypt/live/${FQDN}/cert.pem`,
+    `${CERT_DIR}/${FQDN}/cert.pem`,
     "utf8"
 )
-const ca = fs.readFileSync(`/etc/letsencrypt/live/${FQDN}/chain.pem`, "utf8")
+const ca = fs.readFileSync(`${CERT_DIR}/${FQDN}/chain.pem`, "utf8")
 
 const credentials = {
     key: privateKey,
