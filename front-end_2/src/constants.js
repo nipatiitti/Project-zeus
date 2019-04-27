@@ -2,9 +2,7 @@
  * Define some frequent-use constants
  * for easier import inside components
  *
- * @author name <name@vertics.co>
  *
- * @copyright Vertics Co 2019
  */
 
 // Path to images directory

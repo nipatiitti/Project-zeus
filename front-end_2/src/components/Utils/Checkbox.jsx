@@ -13,7 +13,7 @@ import Check from 'assets/icons/check-icon.svg'
 const Checkbox = ({ checked, children, onChange = () => {} }) => (
     <div onClick={() => onChange(!checked)} className="checkbox-container">
         <div className={`checkbox checkbox-${checked}`}>
-            {checked && <img src={Check} />}
+            {checked && <i className="material-icons">check</i>}
         </div>
         <span>{children}</span>
     </div>

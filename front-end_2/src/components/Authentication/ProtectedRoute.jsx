@@ -3,9 +3,7 @@
  * Only let user access the route if user has been authenticated
  * Otherwise redirect user to login page
  *
- * @author name <name@vertics.co>
  *
- * @copyright Vertics Co 2019
  */
 
 import React from 'react'

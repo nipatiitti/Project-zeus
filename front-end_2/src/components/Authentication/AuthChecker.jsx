@@ -2,9 +2,7 @@
  * A Reusable wrapper component
  * Define authentication state and pass it to its children
  *
- * @author name <name@vertics.co>
  *
- * @copyright Vertics Co 2019
  */
 
 import React, { Component } from 'react'
@@ -21,13 +19,13 @@ class AuthCheck extends Component {
     }
 
     componentDidMount() {
-        if (!this.props.user) {
+        if (!this.props.token) {
             this.setState({ isAuthenticated: false })
         }
     }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.user !== this.props.user) {
+        if (prevProps.token !== this.props.token) {
             this.setState({ isAuthenticated: true })
         }
     }
@@ -39,7 +37,7 @@ class AuthCheck extends Component {
 }
 
 const mapStateToProps = state => ({
-    user: getUser(state.loginReducer)
+    user: state.loginReducer.token
 })
 
 export default connect(mapStateToProps)(AuthCheck)

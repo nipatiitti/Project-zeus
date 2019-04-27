@@ -1,5 +1,3 @@
-import Home from './Home'
-import Analytics from './Analytics'
-import Profile from './Profile'
+import Main from './Main'
 
-export { Home, Analytics, Profile }
+export { Main }

@@ -1,9 +1,7 @@
 /**
  * Root client file
  *
- * @author name <name@vertics.co>
  *
- * @copyright Vertics Co 2019
  */
 
 // React stuffs
@@ -25,12 +23,12 @@ import './styles/index.scss'
 import App from './components/App'
 
 ReactDOM.render(
-	<Provider store={store}>
-		<ConnectedRouter history={history}>
-			<PersistGate loading={null} persistor={persistor}>
-				<App />
-			</PersistGate>
-		</ConnectedRouter>
-	</Provider>,
-	document.getElementById('app')
+    <Provider store={store}>
+        <ConnectedRouter history={history}>
+            <PersistGate loading={null} persistor={persistor}>
+                <App />
+            </PersistGate>
+        </ConnectedRouter>
+    </Provider>,
+    document.getElementById('app')
 )
