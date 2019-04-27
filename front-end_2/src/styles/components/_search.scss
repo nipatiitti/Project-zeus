@@ -1,0 +1,19 @@
+.search {
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid $gray;
+    padding: 1px;
+
+    svg {
+        fill: $gray;
+        margin: 0.5em;
+    }
+
+    input {
+        border: none;
+        &:focus {
+            outline: none;
+        }
+    }
+}

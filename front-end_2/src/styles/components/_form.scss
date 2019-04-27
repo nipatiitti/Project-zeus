@@ -1,0 +1,69 @@
+// General form style
+$base-border: 1px solid $gray;
+
+form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    span.error {
+        color: $red;
+        font-style: italic;
+        font-size: 0.8rem;
+        margin: 5px 0;
+    }
+
+    .button {
+        padding: 5px 5px;
+        border-radius: 3px;
+    }
+}
+
+.field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    height: 2.5em;
+    margin-bottom: 2em;
+
+    &.textarea-container {
+        height: 12.5em;
+    }
+
+    &.slick {
+        margin-bottom: 0;
+        height: 1.375em;
+        width: 10em;
+
+        input {
+            background-color: transparent;
+        }
+    }
+
+    textarea {
+        resize: none;
+        flex: 1;
+        margin-top: 0.5em;
+        padding: 0.5em;
+    }
+
+    input {
+        border: none;
+        border-bottom: $base-border;
+        padding: 5px 5px;
+        flex: 1;
+
+        &::placeholder {
+            color: $gray;
+        }
+
+        &:focus {
+            list-style-type: none;
+            outline: none;
+        }
+    }
+}

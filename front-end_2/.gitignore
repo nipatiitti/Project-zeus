@@ -1,0 +1,15 @@
+# dependencies
+/node_modules
+
+# yarn
+yarn.lock
+yarn-error.log
+
+# build dir
+/build
+
+# environment variables
+.env
+
+# vscode settings
+/.vscode

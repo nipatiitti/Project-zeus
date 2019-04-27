@@ -1,0 +1,40 @@
+// Error message base style
+
+.error-message-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.error-message-enter {
+    opacity: 0.01;
+    transform: translateY(500%);
+}
+.error-message-enter-active {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: all 400ms ease-out;
+}
+.error-message-exit {
+    opacity: 1;
+    transform: translateY(0%);
+}
+.error-message-exit-active {
+    opacity: 0.01;
+    transform: translateY(500%);
+    transition: all 400ms ease-out;
+}
+
+.message {
+    background: $red;
+    color: $white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3em;
+}

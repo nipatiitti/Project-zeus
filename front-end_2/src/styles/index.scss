@@ -1,0 +1,43 @@
+//
+// Stylesheet root file.
+//
+
+// Other styles
+@import 'settings';
+
+// Settings
+@import './components/index';
+
+#app {
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+
+    h1 {
+        color: $h1;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.25em;
+        line-height: 1.2em;
+        text-align: center;
+    }
+
+    .bigtext {
+        font-weight: bold;
+        font-family: 'Montserrat', sans-serif;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $h1;
+}
+
+html,
+body,
+#app {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
