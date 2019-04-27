@@ -4,14 +4,9 @@ import path from "path"
 import morgan from "morgan"
 import bodyParser from "body-parser"
 import api from "./api"
-//import fs from 'fs'
-//import http from 'http'
-//import https from 'https'
-
-// Dependencies
-const fs = require("fs")
-const https = require("https")
-const http = require("http")
+import fs from 'fs'
+import http from 'http'
+import https from 'https'
 
 const app = express()
 
