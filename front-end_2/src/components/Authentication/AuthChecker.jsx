@@ -20,7 +20,10 @@ class AuthCheck extends Component {
     }
 
     componentDidMount() {
-        if (!this.props.main.token || moment().isAfter(moment(this.props.main.expires_in))) {
+        if (
+            !this.props.main.token ||
+            (this.props.main.token && moment().isAfter(moment(this.props.main.expires_in)))
+        ) {
             this.setState({ isAuthenticated: false })
         }
     }
