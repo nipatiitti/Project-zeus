@@ -25,7 +25,7 @@ const certificate = fs.readFileSync(
     `${CERT_DIR}/${FQDN}/cert.pem`,
     "utf8"
 )
-const ca = fs.readFileSync(`/etc/letsencrypt/live/${FQDN}/chain.pem`, "utf8")
+const ca = fs.readFileSync(`${CERT_DIR}/${FQDN}/chain.pem`, "utf8")
 
 const credentials = {
     key: privateKey,
