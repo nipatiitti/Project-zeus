@@ -14,7 +14,7 @@ const app = express()
 const DOMAIN = process.env.DOMAIN
 const SUBDOMAIN = process.env.SUBDOMAIN
 const FQDN = SUBDOMAIN ? `${SUBDOMAIN}.${DOMAIN}` : DOMAIN
-const CERT_DIR = process.env.CERT_DIR
+const CERT_DIR = process.env.CERT_DIR | "/etc/letsencrypt/live"
 
 // Certificate
 const privateKey = fs.readFileSync(
@@ -41,7 +41,7 @@ https.createServer(credentials, app).listen(8443, function() {
 app.use(morgan("tiny"))
 
 // Priority serve static files.
-app.use(express.static(path.join(__dirname, "../front-end_2/build")))
+app.use(express.static(path.join(__dirname, "../front-end/build")))
 app.use(express.static(__dirname, { dotfiles: "allow" }))
 
 // Middlewares
