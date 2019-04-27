@@ -10,18 +10,19 @@ import https from 'https'
 
 const app = express()
 
-// Domain variables
+// Variables regarding certificate
 const DOMAIN = process.env.DOMAIN
 const SUBDOMAIN = process.env.SUBDOMAIN
 const FQDN = SUBDOMAIN ? `${SUBDOMAIN}.${DOMAIN}` : DOMAIN
+const CERT_DIR = process.env.CERT_DIR
 
 // Certificate
 const privateKey = fs.readFileSync(
-    `/etc/letsencrypt/live/${FQDN}/privkey.pem`,
+    `${CERT_DIR}/${FQDN}/privkey.pem`,
     "utf8"
 )
 const certificate = fs.readFileSync(
-    `/etc/letsencrypt/live/${FQDN}/cert.pem`,
+    `${CERT_DIR}/${FQDN}/cert.pem`,
     "utf8"
 )
 const ca = fs.readFileSync(`/etc/letsencrypt/live/${FQDN}/chain.pem`, "utf8")
