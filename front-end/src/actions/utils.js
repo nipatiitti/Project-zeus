@@ -1,15 +1,4 @@
-export const loading = (bool) => {
-  return {
-    type: 'LOADING_ACTION',
-    bool
-  }
-}
-
-export const error = (text) => {
-  return {
-    type: 'ERROR_MESSAGE',
-    msg: text.msg
-  }
-}
-
-export const baseUrl = "https://discordapp.com/api"
+export const id = () =>
+    Math.random()
+        .toString(36)
+        .substr(2)
