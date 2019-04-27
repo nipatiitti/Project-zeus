@@ -16,3 +16,5 @@ src/info.json
 
 # vscode settings
 /.vscode
+
+/**/*.css
