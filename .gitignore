@@ -6,7 +6,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # Config file
-server/discord/config.json 
+server/discord/config.json
+front-end/src/info.json
 
 # For build
 build/
