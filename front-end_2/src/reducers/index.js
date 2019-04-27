@@ -11,12 +11,12 @@ import { createBrowserHistory } from 'history'
 const history = createBrowserHistory()
 
 // login reducer
-import { loginReducer } from './loginReducer'
+import { main } from './main'
 
 // export root reducer
 export const rootReducer = combineReducers({
     router: connectRouter(history),
-    loginReducer
+    main
 })
 
 // export history

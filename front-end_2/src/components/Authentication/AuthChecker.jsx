@@ -37,7 +37,7 @@ class AuthCheck extends Component {
 }
 
 const mapStateToProps = state => ({
-    user: state.loginReducer.token
+    user: state.main.token
 })
 
 export default connect(mapStateToProps)(AuthCheck)

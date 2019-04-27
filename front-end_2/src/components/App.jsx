@@ -14,6 +14,7 @@ import ProtectedRoute from './Authentication/ProtectedRoute'
 
 import { Main } from './Dashboard'
 import Login from './Login'
+import Token from './Token'
 
 class App extends Component {
     render = () => {
@@ -26,9 +27,9 @@ class App extends Component {
                 />
                 <Router>
                     <Switch>
-                        <Route path="/login" component={Login} />
-                        <ProtectedRoute path="/" component={Main} />
-
+                        <Route path="/token" exact component={Token} />
+                        <Route path="/login" exact component={Login} />
+                        <ProtectedRoute path="/" exact component={Main} />
                         <Route
                             component={() => (
                                 <div>

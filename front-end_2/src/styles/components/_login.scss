@@ -4,61 +4,121 @@
         flex: 1;
     }
 
+    &-failed {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+
     &-left {
         flex: 1;
-        overflow: hidden;
+        min-height: 100%;
         display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
+        background-color: black;
 
-        img {
-            height: 100%;
+        h1 {
+            margin: -3em 0 0.2em 0 !important;
         }
-    }
 
-    &-texts {
-        margin: 1.8125em 0 3.75em 0;
-        display: flex;
-        justify-content: space-between;
-    }
+        &-arrow {
+            margin-top: -4em;
+            cursor: pointer;
+            width: 2em;
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            bottom: 0;
 
-    &-registerText {
-        display: flex;
-        justify-content: center;
+            .arrows {
+                color: white;
+                width: 100%;
+                height: auto;
+                margin-top: -0.4em;
+                opacity: 0;
+            }
 
-        a {
-            margin-left: 0.2em;
+            #first {
+                animation: animate-arrow-1 2s ease-in-out infinite;
+            }
+
+            #second {
+                animation: animate-arrow-2 2s ease-in-out infinite;
+            }
+
+            #third {
+                animation: animate-arrow-3 2s ease-in-out infinite;
+            }
         }
     }
 
     &-right {
-        padding: 1em;
+        padding: 0 1em;
+        min-height: 100%;
         flex: 1;
         display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
 
-        .right-container {
-            flex: 1;
-            max-width: 22.5em;
+        background-color: black;
+
+        form {
+            margin-top: 1em;
             display: flex;
             flex-direction: column;
-        }
-
-        h1 {
-            margin: 10em 0 4em 0;
-        }
-
-        .login {
-            margin-bottom: 3.75em;
+            justify-content: space-around;
+            align-items: center;
+            width: 15em;
+            height: 20em;
         }
     }
 }
 
+@keyframes animate-arrow-1 {
+    0% {
+        transform: translateY(0px);
+        opacity: 0.1;
+    }
+    20%,
+    100% {
+        transform: translateY(-20px);
+        opacity: 0.7;
+    }
+}
+@keyframes animate-arrow-2 {
+    0% {
+        transform: translateY(0px);
+        opacity: 0.1;
+    }
+    40%,
+    100% {
+        transform: translateY(-20px);
+        opacity: 0.7;
+    }
+}
+@keyframes animate-arrow-3 {
+    0% {
+        transform: translateY(0px);
+        opacity: 0.1;
+    }
+    80%,
+    100% {
+        transform: translateY(-20px);
+        opacity: 0.7;
+    }
+}
+
 @media screen and (max-width: 760px) {
-    .login-right {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        background-color: $white;
-        margin: auto;
+    .login-container {
+        flex-direction: column;
+    }
+
+    .login-left-arrow {
+        display: flex;
     }
 }

@@ -23,6 +23,10 @@ class Main extends Component {
     render = () => (
         <Fragment>
             <Helmet title="Zeus" />
+            <Search
+                value={this.state.search}
+                onChange={this.handleChange('search')}
+            />
             <div className="home-container">Home</div>
         </Fragment>
     )

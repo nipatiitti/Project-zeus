@@ -1,0 +1,20 @@
+.checkbox {
+    width: 1.12em;
+    height: 1.12em;
+    border-radius: 4px;
+    margin-left: 4px;
+    border: 1px solid white;
+
+    display: flex;
+    justify-content: center;
+
+    &-container {
+        cursor: pointer;
+        user-select: none;
+        display: flex;
+    }
+
+    i {
+        margin-top: -2px;
+    }
+}

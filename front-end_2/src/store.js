@@ -18,7 +18,7 @@ import { PERSIST_KEY } from 'constants'
 // Create client alias
 // Used in action creators
 const client = axios.create({
-    baseURL: process.env.TEST_API || 'http://localhost:5000',
+    baseURL: 'https://discordapp.com/api',
     responseType: 'json'
 })
 
@@ -26,7 +26,7 @@ const client = axios.create({
 const persistConfig = {
     key: PERSIST_KEY,
     storage,
-    blacklist: ['router', 'loginReducer']
+    blacklist: ['router', 'main']
 }
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 

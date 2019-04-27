@@ -1,10 +1,8 @@
 import React from 'react'
 
-import Icon from 'assets/icons/search.js'
-
 const Search = ({ value, onChange }) => (
     <div className="search">
-        <Icon />
+        <i className="material-icons">search</i>
         <input placeholder="Search..." value={value} onChange={onChange} />
     </div>
 )
