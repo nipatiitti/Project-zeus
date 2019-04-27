@@ -5,7 +5,6 @@ import morgan from "morgan"
 import bodyParser from "body-parser"
 import api from "./api"
 import fs from 'fs'
-import http from 'http'
 import https from 'https'
 
 const app = express()
