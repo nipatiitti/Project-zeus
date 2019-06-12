@@ -1,0 +1,24 @@
+{
+    // Bot token
+    "token": "",
+    // Bot prefix
+    "prefix": "",
+    // Current game displayed in nav bar
+    "currentGame": "",
+    // Sysadmin userid
+    "sysadmin": "",
+    // Bot ID
+    "id": "",
+    // Bot secret
+    "secret": "",
+    // Discord base url
+    "baseUrl": "https://discordapp.com/api/v6",
+    // The redirect url to the server
+    "redirect_url": "https://localhost:5000/api/token",
+    // Url to the frontend
+    "frontend_url": "http://localhost:3001",
+    // ID of the guild the bot is used in
+    "guildID": "",
+    // The ID of the "eimitäävalii" role
+    "removeRole": ""
+}

@@ -1,23 +1,29 @@
-import bot from '../discord'
-import config from '../discord/config.json'
+import bot from "../discord"
+import config from "../discord/config.json"
+
+import { getId } from "../codes"
 
 async function handleReq(req, res) {
-  try {
-    const { channelId, userId, bool } = req.body
+    try {
+        const { channelId, access_token } = req.body
 
-    const guild = bot.guilds.get(config.guildID)
+        if (getId(access_token)) {
+            const guild = bot.guilds.get(config.guildID)
 
-    const channel = guild.channels.get(channelId)
+            const channel = guild.channels.get(channelId)
 
-    channel.overwritePermissions(userId, {
-      READ_MESSAGES: bool
-    })
-    .then(() => res.send({succes: true}))
-
-  } catch(msg) {
-    console.log(msg)
-    res.status(500).send(msg)
-  }
+            channel
+                .overwritePermissions(userId, {
+                    READ_MESSAGES: bool
+                })
+                .then(() => res.send({ success: true }))
+        } else {
+            res.status(500).json({ message: "Invalid access token" })
+        }
+    } catch (msg) {
+        console.error(msg)
+        res.status(500).send(msg)
+    }
 }
 
 export default handleReq

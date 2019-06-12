@@ -10,23 +10,6 @@ import https from "https"
 
 const app = express()
 
-// Variables regarding certificate
-const DOMAIN = process.env.DOMAIN
-const SUBDOMAIN = process.env.SUBDOMAIN
-const FQDN = SUBDOMAIN ? `${SUBDOMAIN}.${DOMAIN}` : DOMAIN
-const CERT_DIR = process.env.CERT_DIR || "/etc/letsencrypt/live"
-
-// Certificate
-const privateKey = fs.readFileSync(`${CERT_DIR}/${FQDN}/privkey.pem`, "utf8")
-const certificate = fs.readFileSync(`${CERT_DIR}/${FQDN}/cert.pem`, "utf8")
-const ca = fs.readFileSync(`${CERT_DIR}/${FQDN}/chain.pem`, "utf8")
-
-const credentials = {
-    key: privateKey,
-    cert: certificate,
-    ca: ca
-}
-
 // ONLY FOR DEV PURPOSES
 http.createServer(app).listen(5000, () => {
     console.log("Running")
@@ -34,9 +17,28 @@ http.createServer(app).listen(5000, () => {
 
 /* UNCOMMENT FOR PRODUCTION */
 
+// Variables regarding certificate
+// const DOMAIN = process.env.DOMAIN
+// const SUBDOMAIN = process.env.SUBDOMAIN
+// const FQDN = SUBDOMAIN ? `${SUBDOMAIN}.${DOMAIN}` : DOMAIN
+// const CERT_DIR = process.env.CERT_DIR || "/etc/letsencrypt/live"
+
+// Certificate
+// const privateKey = fs.readFileSync(`${CERT_DIR}/${FQDN}/privkey.pem`, "utf8")
+// const certificate = fs.readFileSync(`${CERT_DIR}/${FQDN}/cert.pem`, "utf8")
+// const ca = fs.readFileSync(`${CERT_DIR}/${FQDN}/chain.pem`, "utf8")
+
+// const credentials = {
+//     key: privateKey,
+//     cert: certificate,
+//     ca: ca
+// }
+
 // https.createServer(credentials, app).listen(8443, () => {
 //     console.log('Running')
 // })
+
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 // setup the logger
 app.use(morgan("tiny"))
