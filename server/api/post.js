@@ -5,9 +5,9 @@ import { getId } from "../codes"
 
 async function handleReq(req, res) {
     try {
-        const { channelId, access_token } = req.body
-
-        if (getId(access_token)) {
+        const { channelId, token, bool } = req.body
+        const userId = getId(token)
+        if (userId) {
             const guild = bot.guilds.get(config.guildID)
 
             const channel = guild.channels.get(channelId)
@@ -17,6 +17,7 @@ async function handleReq(req, res) {
                     READ_MESSAGES: bool
                 })
                 .then(() => res.send({ success: true }))
+                .catch(e => console.error(e))
         } else {
             res.status(500).json({ message: "Invalid access token" })
         }

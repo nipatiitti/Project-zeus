@@ -6,6 +6,7 @@ const handleReq = (req, res) => {
     }
 
     removeCode(req.body.token)
+    res.status(200).json({ success: true })
 }
 
 export default handleReq

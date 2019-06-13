@@ -1,7 +1,8 @@
 let codes = {}
 
-export const addCode = (code, userId) => {
-    codes[code] = userId
+export const addCode = (code, user) => {
+    console.log(code, user)
+    codes[code] = user
 }
 
 export const checkCode = (code, userId) => {

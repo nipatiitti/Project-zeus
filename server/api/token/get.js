@@ -28,7 +28,7 @@ const handleReq = async (req, res) => {
         addCode(access_token, userResponse.data)
         setTimeout(() => removeCode(access_token), expires_in * 100)
 
-        res.redirect(`${CONFIG.frontend_url}/token?${access_token}`)
+        res.redirect(`${CONFIG.frontend_url}/token/${access_token}/${userResponse.data.id}`)
     } catch (e) {
         console.error(e.response ? e.response : e)
         res.status(500).send("Unvalid shit in the discord request check CONFIG.json and all the params")
