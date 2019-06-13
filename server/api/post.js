@@ -17,7 +17,10 @@ async function handleReq(req, res) {
                     READ_MESSAGES: bool
                 })
                 .then(() => res.send({ success: true }))
-                .catch(e => console.error(e))
+                .catch(e => {
+                    console.error(e)
+                    res.status(500).send(e)
+                })
         } else {
             res.status(500).json({ message: "Invalid access token" })
         }
