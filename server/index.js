@@ -24,7 +24,7 @@ const SUBDOMAIN = process.env.SUBDOMAIN
 const FQDN = SUBDOMAIN ? `${SUBDOMAIN}.${DOMAIN}` : DOMAIN
 const CERT_DIR = process.env.CERT_DIR || "/etc/letsencrypt/live"
 
-Certificate
+// Certificate
 const privateKey = fs.readFileSync(`${CERT_DIR}/${FQDN}/privkey.pem`, "utf8")
 const certificate = fs.readFileSync(`${CERT_DIR}/${FQDN}/cert.pem`, "utf8")
 const ca = fs.readFileSync(`${CERT_DIR}/${FQDN}/chain.pem`, "utf8")
