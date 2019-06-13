@@ -18,7 +18,7 @@ const app = express()
 
 /* UNCOMMENT FOR PRODUCTION */
 
-Variables regarding certificate
+// Variables regarding certificate
 const DOMAIN = process.env.DOMAIN
 const SUBDOMAIN = process.env.SUBDOMAIN
 const FQDN = SUBDOMAIN ? `${SUBDOMAIN}.${DOMAIN}` : DOMAIN
@@ -36,7 +36,7 @@ const credentials = {
 }
 
 https.createServer(credentials, app).listen(8443, () => {
-    console.log('Running')
+    console.log("Running")
 })
 
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
