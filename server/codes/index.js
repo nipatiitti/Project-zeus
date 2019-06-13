@@ -1,7 +1,6 @@
 let codes = {}
 
 export const addCode = (code, user) => {
-    console.log(code, user)
     codes[code] = user
 }
 
